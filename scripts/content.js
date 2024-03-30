@@ -120,8 +120,10 @@ function highlightWord(categoryTitle){
     for(const tile of remainingWordsElements){
         console.log(tile.innerText);
         if(gameWords[solutionIndex].includes(tile.innerText)){
-            tile.style.backgroundColor = "rgb(227, 82, 82)";
-            break;
+            if(tile.style.backgroundColor != "rgb(227, 82, 82)"){
+                tile.style.backgroundColor = "rgb(227, 82, 82)";
+                break;
+            }
         }
     }
 }
