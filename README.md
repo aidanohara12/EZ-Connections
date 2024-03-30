@@ -12,19 +12,19 @@ After finding the NYT api for the Connections game, we were able to load in the 
 
 First when the extension is downloaded onto the extensions tab and the user loads in the New York Times Connections they will see the following...
 
-![alt text](HintButton.png)
+![Hint Button](images/HintButton.png)
 
 They now have this hint button next to the shuffle button. 
 
 After clicking this hint button they user is given a hint that gives them the title to the easiest missing category as shown below. 
 
-![alt text](HintDemo.png)
+![Hint Demo](images/HintDemo.png)
 
 Now they have a hint shown below the button giving them the category that they have to solve. 
 
 If the user is still having trouble they can click the hint button again and it will highlight a tile that is contained in the category they have a hint for. 
 
-![Red Hint Demo](RedHintDemo.png)
+![Red Hint Demo](images/RedHintDemo.png)
 
 
 Using all of these hints the user can now easily complete the Connections while having fun hints along the way!
