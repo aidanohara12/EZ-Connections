@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "EZ Connections",
+  "name": "EZConnections",
   "description": "Get Hints for the NYT Connections game",
   "version": "1.0",
   "action": {
