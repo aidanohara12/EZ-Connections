@@ -50,12 +50,15 @@ shuffleButton.parentNode.insertBefore(hintButton, shuffleButton.nextSibling);
 //keep track of if the user already got a hint previously
 let gotPrevHint = false;
 
+//create count to always keep track of how mnay hints used
+let count = 0;
 
 
 
 
 //get the hint to be displayed to the user
 function getHint(){
+        count++;
         if(!gotPrevHint){
         //adding the text below the mistakes
         const gameBoard = document.getElementById("pz-game-root");
@@ -64,10 +67,18 @@ function getHint(){
         //hintText.setAttribute("class", "Mistakes-module_mistakesContent__nlijY");
         hintText.style.textAlign = 'center';
         hintText.style.fontWeight = 'bold';
+        
+        //adding total hints counter
+        const totalHints = document.createElement('h2');
+        totalHints.setAttribute("data-testid", "total-hints");
+        totalHints.style.textAlign = 'center';
+        totalHints.style.fontWeight = 'bold';
 
+        totalHints.innerHTML = "Total Hints: " + count;
         hintText.innerHTML = getNextHintText();
 
         gameBoard.insertAdjacentElement("beforeend", hintText);
+        gameBoard.insertAdjacentElement("beforeend", totalHints);
         gotPrevHint = true;
     }else{
         //DONT ADD NEW TEXT
@@ -120,3 +131,11 @@ function highlightWord(categoryTitle){
         }
     }
 }
+
+
+
+
+
+
+
+
