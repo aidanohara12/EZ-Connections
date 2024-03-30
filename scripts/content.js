@@ -33,7 +33,7 @@ var hintButton = document.createElement('button');
 hintButton.setAttribute('type', 'button');
 hintButton.setAttribute('class', 'ActionButton-module_button__IlhXt');
 hintButton.setAttribute('style', 'background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); border-color: rgb(0, 0, 0);');
-hintButton.textContent = 'New Button'; // Set the text content of the new button
+hintButton.textContent = 'Hint';
 
 // Insert the new button next to the existing button
 shuffleButton.parentNode.insertBefore(hintButton, shuffleButton.nextSibling);
