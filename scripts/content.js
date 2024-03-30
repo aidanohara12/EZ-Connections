@@ -23,17 +23,26 @@ fetch(url).then((response) => response.json()).then((json) => {
 });
 
 //add the hint button to the webpage
-// Select the existing button element
-var shuffleButton = document.querySelector('[data-testid="shuffle-btn"]');
+//select the existing button element
+const shuffleButton = document.querySelector('[data-testid="shuffle-btn"]');
 
-// Create a new button element
-var hintButton = document.createElement('button');
+//create a new button element
+const hintButton = document.createElement('button');
 
-// Set attributes for the new button
+//set attributes for the new button
 hintButton.setAttribute('type', 'button');
 hintButton.setAttribute('class', 'ActionButton-module_button__IlhXt');
 hintButton.setAttribute('style', 'background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); border-color: rgb(0, 0, 0);');
 hintButton.textContent = 'Hint';
+hintButton.setAttribute('onclick', 'getHint()');
 
-// Insert the new button next to the existing button
-shuffleButton.parentNode.insertBefore(hintButton, shuffleButton.nextSibling);
+function getHint(){
+    //insert the new button next to the existing button
+    shuffleButton.parentNode.insertBefore(hintButton, shuffleButton.nextSibling);
+
+    const buttonRow = document.querySelector('[class="Board-module_boardActionGroup__mUDT8"]');
+    const hintText = document.createElement('p');
+    hintText.textContent = "YOU ASKED FOR A HINT";
+
+    buttonRow.parentNode.insertBefore(hintText, buttonRow.nextSibling);
+}
