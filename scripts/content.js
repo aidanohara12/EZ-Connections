@@ -1,22 +1,13 @@
-const article = document.querySelector("article");
+//get the current date for accessing the connections data
+const date = new Date();
 
-// `document.querySelector` may return null if the selector doesn't match anything.
-if (article) {
-  const text = article.textContent;
-  const wordMatchRegExp = /[^\s]+/g; // Regular expression
-  const words = text.matchAll(wordMatchRegExp);
-  // matchAll returns an iterator, convert to array to get word count
-  const wordCount = [...words].length;
-  const readingTime = Math.round(wordCount / 200);
-  const badge = document.createElement("p");
-  // Use the same styling as the publish information in an article's header
-  badge.classList.add("color-secondary-text", "type--caption");
-  badge.textContent = `⏱️ ${readingTime} min read`;
+//seperate out the year day and month
+const dd = String(date.getDate()).padStart(2, '0');
+const mm = String(date.getMonth() + 1).padStart(2, '0');
+const yyyy = date.getFullYear();
 
-  // Support for API reference docs
-  const heading = article.querySelector("h1");
-  // Support for article docs with date
-  const date = article.querySelector("time")?.parentNode;
+//string for the json url
+let urlDate = yyyy + '-' + mm + '-' + dd;
 
-  (date ?? heading).insertAdjacentElement("afterend", badge);
-}
+
+
