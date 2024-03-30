@@ -41,7 +41,7 @@ function getHint(){
     console.log("GET HINT");
     const buttonRow = document.querySelector('[class="Board-module_boardActionGroup__mUDT8"]');
     const hintText = document.createElement('p');
-    hintText.textContent = "YOU ASKED FOR A HINT";
+    hintText.textContent = gameCategories[0];
 
     buttonRow.insertAdjacentElement("afterend", hintText);
 }
