@@ -1,4 +1,14 @@
-console.log("This is in the highligh word branch again");
+//setup OpenAI for use later
+import OpenAI from "openai";
+require("dotenv").config();
+
+const openAIClient = new OpenAI({
+    apiKey: process.env['OPENAI_API_KEY']
+});
+
+
+
+
 
 //get the current date for accessing the connections data
 const date = new Date();
@@ -127,4 +137,16 @@ function highlightWord(categoryTitle){
             }
         }
     }
+}
+
+async function getAIHint(currentCategory){
+    const response = await openAIClient.chat.completions.create({
+        model: "gpt-3.5-turbo",
+        messages: [{
+            role: "system",
+            content: "Please generate a short hint meant to help the user connect words in the following category: " + currentCategory,
+        }]
+    });
+
+    console.log(response.choices[0]);
 }
