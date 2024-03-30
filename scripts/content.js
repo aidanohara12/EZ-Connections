@@ -69,7 +69,7 @@ function getHint(){
         //hintText.setAttribute("class", "Mistakes-module_mistakesContent__nlijY");
         hintText.style.textAlign = 'center';
 
-        hintText.innerHTML = getNextHintText();
+        hintText.innerHTML = "Hint: " + getNextHintText();
 
         gameBoard.insertAdjacentElement("beforeend", hintText);
         gotPrevHint = true;
@@ -82,7 +82,7 @@ function getHint(){
         if(hintText.innerHTML == getNextHintText()){
             highlightWord(hintText.innerHTML);
         }else{
-            hintText.innerHTML = getNextHintText();
+            hintText.innerHTML = "Hint: " + getNextHintText();
         }
     }
 }
@@ -101,7 +101,6 @@ function getNextHintText() {
     for(let i = 0; i < gameCategories.length; i++){
         if(!solvedCategoriesTitles.includes(gameCategories[i])){
             return gameCategories[i];
-            break;
         }
     }
 }
