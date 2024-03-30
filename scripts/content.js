@@ -36,17 +36,33 @@ hintButton.setAttribute('type', 'button');
 hintButton.setAttribute('class', 'ActionButton-module_button__IlhXt');
 hintButton.setAttribute('style', 'background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); border-color: rgb(0, 0, 0);');
 hintButton.textContent = 'Hint';
-
-function getHint(){
-    console.log("GET HINT");
-    const buttonRow = document.querySelector('[class="Board-module_boardActionGroup__mUDT8"]');
-    const hintText = document.createElement('p');
-    hintText.textContent = gameCategories[0];
-
-    buttonRow.insertAdjacentElement("afterend", hintText);
-}
-
 hintButton.addEventListener("click", getHint);
 
 //insert the new button next to the existing button
 shuffleButton.parentNode.insertBefore(hintButton, shuffleButton.nextSibling);
+
+//get the hint to be displayed to the user
+function getHint(){
+    //adding the text below the button
+    const buttonRow = document.querySelector('[class="Board-module_boardActionGroup__mUDT8"]');
+    const hintText = document.createElement('p');
+    
+    //check which categories the user has solved already
+    const solvedCategoriesElements = document.querySelectorAll('[data-testid="solved-category-title"');
+    const solvedCategoriesTitles = [];
+
+    //get their titles
+    for(const solved in solvedCategoriesElements){
+        solvedCategoriesTitles.push(solved.innerHTML);
+    }
+
+    //set the hint to one of the categories the user has not already sovled
+    for(const possibleHint in gameCategories){
+        if(!solvedCategoriesTitles.includes(possibleHint)){
+            hintText.innerHTML = possibleHint;
+            break;
+        }
+    }
+
+    buttonRow.insertAdjacentElement("afterend", hintText);
+}
