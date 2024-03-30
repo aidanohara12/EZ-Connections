@@ -56,7 +56,6 @@ let count = 0;
 
 
 
-
 //get the hint to be displayed to the user
 function getHint(){
         count++;
@@ -68,10 +67,18 @@ function getHint(){
         //hintText.setAttribute("class", "Mistakes-module_mistakesContent__nlijY");
         hintText.style.textAlign = 'center';
         hintText.style.fontWeight = 'bold';
+        
+        //adding total hints counter
+        const totalHints = document.createElement('h2');
+        totalHints.setAttribute("data-testid", "total-hints");
+        totalHints.style.textAlign = 'center';
+        totalHints.style.fontWeight = 'bold';
 
+        totalHints.innerHTML = "Total Hints: " + count;
         hintText.innerHTML = getNextHintText();
 
         gameBoard.insertAdjacentElement("beforeend", hintText);
+        gameBoard.insertAdjacentElement("beforeend", totalHints);
         gotPrevHint = true;
     }else{
         //DONT ADD NEW TEXT
@@ -126,28 +133,7 @@ function highlightWord(categoryTitle){
 }
 
 
-const viewResultsButton = document.querySelector('[class="ActionButton-module_button__IlhXt ActionButton-module_xLarge__zj7ZN"]');
-console.log(viewResultsButton);
 
-
-
-
-
-//select the final button
-const congratsButton = document.querySelector('[class="xwd__modal--content"]');
-
-
-//create the text and set attributes
-const totalHints = document.createElement('h2');
-totalHints.setAttribute("data-testid", "total-hints");
-totalHints.style.textAlign = 'center';
-totalHints.style.fontWeight = 'bold';
-
-//change text to show count
-totalHints.innerHTML = "Total Hints: " + count;
-
-//insert after the query selector
-congratsButton.insertAdjacentElement("beforeend", totalHints);
 
 
 
