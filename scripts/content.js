@@ -80,6 +80,7 @@ function getHint(){
 
         //check if an additional hint was requested
         if(hintText.innerHTML == getNextHintText()){
+            console.log("additional hint");
             highlightWord(hintText.innerHTML);
         }else{
             hintText.innerHTML = getNextHintText();
