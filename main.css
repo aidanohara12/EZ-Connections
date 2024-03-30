@@ -2,3 +2,7 @@ body {
     width: 375px;
     height: 375;
 }
+
+img {
+    width: 100%
+}
