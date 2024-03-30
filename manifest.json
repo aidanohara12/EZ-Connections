@@ -16,7 +16,7 @@
     {
       "js": ["scripts/content.js"],
       "matches": [
-        "https://www.nytimes.com/games/connections"
+        "https://www.nytimes.com/games/connections/*"
       ]
     }
   ]
