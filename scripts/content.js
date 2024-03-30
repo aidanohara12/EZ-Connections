@@ -9,5 +9,15 @@ const yyyy = date.getFullYear();
 //string for the json url
 let urlDate = yyyy + '-' + mm + '-' + dd;
 
+//get the json for the current day
+let url = "https://www.nytimes.com/svc/connections/v2/" + urlDate + ".json";
 
+//array to store the category titles
+let game_categories = [];
 
+//import the json
+fetch(url).then((response) => response.json()).then((json) => {
+    for(const category of json.categories){
+        game_categories.push(category.title);
+    }
+});
