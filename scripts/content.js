@@ -36,10 +36,10 @@ hintButton.setAttribute('style', 'background-color: rgb(255, 255, 255); color: r
 hintButton.textContent = 'Hint';
 hintButton.setAttribute('onclick', 'getHint()');
 
-function getHint(){
-    //insert the new button next to the existing button
-    shuffleButton.parentNode.insertBefore(hintButton, shuffleButton.nextSibling);
+//insert the new button next to the existing button
+shuffleButton.parentNode.insertBefore(hintButton, shuffleButton.nextSibling);
 
+function getHint(){
     const buttonRow = document.querySelector('[class="Board-module_boardActionGroup__mUDT8"]');
     const hintText = document.createElement('p');
     hintText.textContent = "YOU ASKED FOR A HINT";
