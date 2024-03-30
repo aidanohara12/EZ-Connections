@@ -57,10 +57,10 @@ function getHint(){
     }
 
     //set the hint to one of the categories the user has not already sovled
-    for(const possibleHint in gameCategories){
-        console.log(possibleHint);
-        if(!solvedCategoriesTitles.includes(possibleHint)){
-            hintText.innerHTML = possibleHint;
+    for(let i = 0; i < gameCategories.length; i++){
+        console.log(gameCategories[i]);
+        if(!solvedCategoriesTitles.includes(gameCategories[i])){
+            hintText.innerHTML = gameCategories[i];
             break;
         }
     }
