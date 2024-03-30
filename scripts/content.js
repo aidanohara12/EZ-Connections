@@ -1,5 +1,3 @@
-console.log("This is in the highligh word branch again");
-
 //get the current date for accessing the connections data
 const date = new Date();
 
@@ -30,9 +28,6 @@ fetch(url).then((response) => response.json()).then((json) => {
         }
         gameWords.push(setOfFour);
     }
-
-    console.log(gameCategories);
-    console.log(gameWords);
 });
 
 //add the hint button to the webpage
@@ -112,17 +107,13 @@ function highlightWord(categoryTitle){
     //get every card remaining on the board
     const remainingWordsElements = document.querySelectorAll('[data-testid="card-label"]');
 
-    console.log(remainingWordsElements);
-
     //get the index for the solutions
     let solutionIndex = gameCategories.indexOf(categoryTitle);
 
     //get the string for each word
     for(const tile of remainingWordsElements){
-        console.log(tile.innerText);
         if(gameWords[solutionIndex].includes(tile.innerText)){
             if(tile.style.backgroundColor != "rgb(227, 82, 82)" && tile.style.backgroundColor != "rgb(90, 89, 78)") {
-
                 tile.style.backgroundColor = "rgb(227, 82, 82)";
                 break;
             }
