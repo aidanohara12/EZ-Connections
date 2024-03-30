@@ -20,6 +20,8 @@ fetch(url).then((response) => response.json()).then((json) => {
     for(const category of json.categories){
         gameCategories.push(category.title);
     }
+
+    console.log(gameCategories);
 });
 
 //add the hint button to the webpage
@@ -34,15 +36,17 @@ hintButton.setAttribute('type', 'button');
 hintButton.setAttribute('class', 'ActionButton-module_button__IlhXt');
 hintButton.setAttribute('style', 'background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); border-color: rgb(0, 0, 0);');
 hintButton.textContent = 'Hint';
-hintButton.setAttribute('onclick', 'getHint()');
-
-//insert the new button next to the existing button
-shuffleButton.parentNode.insertBefore(hintButton, shuffleButton.nextSibling);
 
 function getHint(){
+    console.log("GET HINT");
     const buttonRow = document.querySelector('[class="Board-module_boardActionGroup__mUDT8"]');
     const hintText = document.createElement('p');
     hintText.textContent = "YOU ASKED FOR A HINT";
 
     buttonRow.insertAdjacentElement("afterend", hintText);
 }
+
+hintButton.setAttribute('onclick', 'getHint()');
+
+//insert the new button next to the existing button
+shuffleButton.parentNode.insertBefore(hintButton, shuffleButton.nextSibling);
