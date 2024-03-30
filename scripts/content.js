@@ -49,6 +49,7 @@ function getHint(){
     
     //check which categories the user has solved already
     const solvedCategoriesElements = document.querySelectorAll('[data-testid="solved-category-title"');
+    console.log(solvedCategoriesElements);
     const solvedCategoriesTitles = [];
 
     //get their titles
