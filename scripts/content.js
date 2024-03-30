@@ -127,6 +127,8 @@ function highlightWord(categoryTitle){
 
 //select the final button
 const congratsButton = document.querySelector('[class="xwd__modal--content"]');
+console.log(count);
+
 //create the text and set attributes
 const totalHints = document.createElement('h2');
 totalHints.setAttribute("data-testid", "total-hints");
