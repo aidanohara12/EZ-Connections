@@ -11,5 +11,15 @@
     "32": "images/ezConnections32.png",
     "48": "images/ezConnections48.png",
     "128": "images/ezConnections128.png"
-  }
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+        "https://developer.chrome.com/docs/extensions/*",
+        "https://developer.chrome.com/docs/webstore/*"
+      ]
+    }
+  ]
 }
+
