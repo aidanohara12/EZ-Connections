@@ -52,14 +52,14 @@ let gotPrevHint = false;
 function getHint(){
         if(!gotPrevHint){
         //adding the text below the mistakes
-        const mistakeRow = document.querySelector('[class="Mistakes-module_mistakesWrapper__LGl68 Mistakes-module_showMistakes__q6EWj"]');
+        const gameBoard = document.getElementById("pz-game-root");
         const hintText = document.createElement('h2');
         hintText.setAttribute("data-testid", "hint-title");
         hintText.setAttribute("class", "Mistakes-module_mistakesContent__nlijY");
 
         hintText.innerHTML = getNextHintText();
 
-        mistakeRow.insertAdjacentElement("beforeend", hintText);
+        gameBoard.insertAdjacentElement("beforeend", hintText);
         gotPrevHint = true;
     }else{
         const hintText = document.querySelector('[data-testid="hint-title"]');
