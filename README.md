@@ -22,3 +22,7 @@ If the user is still having trouble they can click the hint button again and it 
 ![Red Hint Demo](images/RedHintDemo.png)
 
 Using all of these hints the user can now easily complete the Connections while having fun along the way!
+
+
+## What we learned
+During this project we learned core concepts in JavaScript, HTML and CSS programming. We also learned key reverse engineering and problem solving stratagies that helped us overcome obsticles. 
