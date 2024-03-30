@@ -23,7 +23,17 @@ fetch(url).then((response) => response.json()).then((json) => {
 });
 
 //add the hint button to the webpage
-const shuffleButton = document.querySelecter('[data-testid=shuffle-btn]');
-const hintButton = document.createElement('p');
-hintButton.innerHTML = 'Hint';
-shuffleButton.parentNode.insertBefore(hintButton, shuffleButton);
+// Select the existing button element
+var shuffleButton = document.querySelector('[data-testid="shuffle-btn"]');
+
+// Create a new button element
+var hintButton = document.createElement('button');
+
+// Set attributes for the new button
+hintButton.setAttribute('type', 'button');
+hintButton.setAttribute('class', 'ActionButton-module_button__IlhXt');
+hintButton.setAttribute('style', 'background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); border-color: rgb(0, 0, 0);');
+hintButton.textContent = 'New Button'; // Set the text content of the new button
+
+// Insert the new button next to the existing button
+shuffleButton.parentNode.insertBefore(hintButton, shuffleButton.nextSibling);
