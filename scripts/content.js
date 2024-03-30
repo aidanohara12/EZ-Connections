@@ -41,14 +41,34 @@ hintButton.addEventListener("click", getHint);
 //insert the new button next to the existing button
 shuffleButton.parentNode.insertBefore(hintButton, shuffleButton.nextSibling);
 
+//keep track of if the user already got a hint previously
+let gotPrevHint = false;
+
+
+
+
+
 //get the hint to be displayed to the user
 function getHint(){
-    //adding the text below the button
-    const buttonRow = document.querySelector('[class="Board-module_boardActionGroup__mUDT8"]');
-    const hintText = document.createElement('p');
-    
+        if(!gotPrevHint){
+        //adding the text below the button 
+        const buttonRow = document.querySelector('[class="Board-module_boardActionGroup__mUDT8"]');
+        const hintText = document.createElement('p');
+        hintText.setAttribute("data-testid", "hint-title");
+
+        hintText.innerHTML = getNextHintText();
+
+        buttonRow.insertAdjacentElement("afterend", hintText);
+        gotPrevHint = true;
+    }else{
+        const hintText = document.querySelector('[data-testid="hint-title"]');
+        hintText.innerHTML = getNextHintText();
+    }
+}
+
+function getNextHintText() {
     //check which categories the user has solved already
-    const solvedCategoriesElements = document.querySelectorAll('[data-testid="solved-category-title"');
+    const solvedCategoriesElements = document.querySelectorAll('[data-testid="solved-category-title"]');
     const solvedCategoriesTitles = [];
 
     //get their titles
@@ -60,10 +80,8 @@ function getHint(){
     for(let i = 0; i < gameCategories.length; i++){
         console.log(gameCategories[i]);
         if(!solvedCategoriesTitles.includes(gameCategories[i])){
-            hintText.innerHTML = gameCategories[i];
+            return gameCategories[i];
             break;
         }
     }
-
-    buttonRow.insertAdjacentElement("afterend", hintText);
 }
