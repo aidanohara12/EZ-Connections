@@ -14,16 +14,25 @@ let urlDate = yyyy + '-' + mm + '-' + dd;
 //get the json for the current day
 let url = "https://www.nytimes.com/svc/connections/v2/" + urlDate + ".json";
 
-//array to store the category titles
+//array to store the correct answers
 let gameCategories = [];
+let gameWords = [];
 
 //import the json
 fetch(url).then((response) => response.json()).then((json) => {
     for(const category of json.categories){
         gameCategories.push(category.title);
+
+        //getting the correct answers for each category
+        let setOfFour = [];
+        for(const word of category.cards){
+            setOfFour.push(word.content);
+        }
+        gameWords.push(setOfFour);
     }
 
     console.log(gameCategories);
+    console.log(gameWords);
 });
 
 //add the hint button to the webpage
