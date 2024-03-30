@@ -110,8 +110,8 @@ function getNextHintText() {
     //set the hint to one of the categories the user has not already sovled
     for(let i = 0; i < gameCategories.length; i++){
         if(!solvedCategoriesTitles.includes(gameCategories[i])){
+            getAIHint(gameCategories[i]);
             return gameCategories[i];
-            break;
         }
     }
 }
@@ -120,8 +120,6 @@ function getNextHintText() {
 function highlightWord(categoryTitle){
     //get every card remaining on the board
     const remainingWordsElements = document.querySelectorAll('[data-testid="card-label"]');
-
-    console.log(remainingWordsElements);
 
     //get the index for the solutions
     let solutionIndex = gameCategories.indexOf(categoryTitle);
@@ -144,7 +142,7 @@ async function getAIHint(currentCategory){
         model: "gpt-3.5-turbo",
         messages: [{
             role: "system",
-            content: "Please generate a short hint meant to help the user connect words in the following category: " + currentCategory,
+            content: "Please generate a short hint meant to help the user connect words in the following category: " + currentCategory
         }]
     });
 
