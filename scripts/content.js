@@ -37,12 +37,12 @@ hintButton.textContent = 'Hint';
 hintButton.setAttribute('onclick', 'getHint()');
 
 //insert the new button next to the existing button
-shuffleButton.parentNode.insertBefore(hintButton, shuffleButton.nextSibling);
+shuffleButton.parentNode.insertAfter(hintButton);
 
 function getHint(){
     const buttonRow = document.querySelector('[class="Board-module_boardActionGroup__mUDT8"]');
     const hintText = document.createElement('p');
     hintText.textContent = "YOU ASKED FOR A HINT";
 
-    buttonRow.parentNode.insertBefore(hintText, buttonRow.nextSibling);
+    buttonRow.parentNode.insertAfter(hintText);
 }
