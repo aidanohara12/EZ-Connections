@@ -4,7 +4,7 @@
   "description": "Get Hints for the NYT Connections game",
   "version": "1.0",
   "action": {
-    "default_popup": "hello.html"
+    "default_popup": "instructions.html"
   },
   "icons": {
     "16": "images/ezConnections16.png",
