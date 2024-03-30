@@ -30,4 +30,4 @@ hintButton.style.background-color = "rgb(255, 255, 255)";
 hintButton.style.color = "rgb(127, 127, 127)";
 hintButton.style.border-color = "rgb(127, 127, 127)";
 hintButton.innerHTML = "Hint";
-rowButton.insertAdjacentElement("afterend", hintButton);
+rowButton.insertAdjacentElement("beforeend", hintButton);
