@@ -22,5 +22,5 @@ fetch(url).then((response) => response.json()).then((json) => {
     }
 });
 
-const button = document.getElementById("pz-game-title");
+const button = document.getElementByClass("pz-game-title");
 button.innerHTML = "YIPPEEE";
