@@ -23,5 +23,5 @@ fetch(url).then((response) => response.json()).then((json) => {
 });
 
 //add the hint button to the webpage
-const shuffleButton = document.getElementsByClassName("ActionButton-module_button__IlhXt");
+const shuffleButton = document.querySelecterAll('[data-testid=shuffle-btn]');
 shuffleButton.innerHTML = "YIPPEEE";
