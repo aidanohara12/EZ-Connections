@@ -53,6 +53,7 @@ function getHint(){
 
     //get their titles
     for(const solved in solvedCategoriesElements){
+        console.log(solved.innerHTML);
         solvedCategoriesTitles.push(solved.innerHTML);
     }
 
