@@ -58,7 +58,7 @@ let count = 0;
 
 //get the hint to be displayed to the user
 function getHint(){
-    if(count > 5) {
+    if(count > 4) {
         return;
     }
         
