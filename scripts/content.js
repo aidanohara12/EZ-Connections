@@ -80,7 +80,6 @@ function getHint(){
 
         //check if an additional hint was requested
         if(hintText.innerHTML == getNextHintText()){
-            console.log("additional hint");
             highlightWord(hintText.innerHTML);
         }else{
             hintText.innerHTML = getNextHintText();
@@ -111,7 +110,8 @@ function getNextHintText() {
 function highlightWord(categoryTitle){
     //get every card remaining on the board
     const remainingWordsElements = document.querySelectorAll('[data-testid="card-label"]');
-    const remainingWords = [];
+
+    console.log(remainingWordsElements);
 
     //get the index for the solutions
     let solutionIndex = gameCategories.indexOf(categoryTitle);
