@@ -1,4 +1,4 @@
-# EZ Connections
+# EZConnections
 ## Created by Aidan O'Hara and Dylan Sparkenbaugh
 
 ## Purpose of Project
