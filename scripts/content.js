@@ -69,8 +69,12 @@ function getHint(){
         //hintText.setAttribute("class", "Mistakes-module_mistakesContent__nlijY");
         hintText.style.textAlign = 'center';
         hintText.style.fontWeight = 'bold';
-
-        hintText.innerHTML = "Hint: " + getNextHintText();
+        
+        //create bold hint text    
+        let hint = "Hint: " + getNextHintText();
+        hint.bold();
+            
+        hintText.innerHTML = hint;
 
         gameBoard.insertAdjacentElement("beforeend", hintText);
         gotPrevHint = true;
@@ -79,9 +83,7 @@ function getHint(){
         //instead change the old text
         const hintText = document.querySelector('[data-testid="hint-title"]');
 
-        //create bold hint text
-        let hint = "Hint: " + getNextHintText();
-        hint.bold();
+        
             
         //check if an additional hint was requested
         if(hintText.innerHTML == hint){
