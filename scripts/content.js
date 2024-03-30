@@ -58,6 +58,10 @@ let count = 0;
 
 //get the hint to be displayed to the user
 function getHint(){
+    if(count > 5) {
+        return;
+    }
+        
     if(!gotPrevHint){
         //adding the text below the mistakes
         const gameBoard = document.getElementById("pz-game-root");
