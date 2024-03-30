@@ -58,8 +58,8 @@ let count = 0;
 
 //get the hint to be displayed to the user
 function getHint(){
-        count++;
-        if(!gotPrevHint){
+    count++;
+    if(!gotPrevHint){
         //adding the text below the mistakes
         const gameBoard = document.getElementById("pz-game-root");
         const hintText = document.createElement('h2');
@@ -81,6 +81,10 @@ function getHint(){
         gameBoard.insertAdjacentElement("beforeend", totalHints);
         gotPrevHint = true;
     }else{
+        //update hint count
+        const totalHints = document.querySelector('[data-testid="total-hints"]');
+        totalHints.innerHTML = "Total Hints: " + count;
+
         //DONT ADD NEW TEXT
         //instead change the old text
         const hintText = document.querySelector('[data-testid="hint-title"]');
