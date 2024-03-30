@@ -49,19 +49,16 @@ function getHint(){
     
     //check which categories the user has solved already
     const solvedCategoriesElements = document.querySelectorAll('[data-testid="solved-category-title"');
-    console.log(solvedCategoriesElements);
-    console.log(solvedCategoriesElements[0].innerHTML);
     const solvedCategoriesTitles = [];
 
     //get their titles
-    for(const solved in solvedCategoriesElements){
-        console.log(solved.innerHTML);
-        solvedCategoriesTitles.push(solved.innerHTML);
+    for(let i = 0; i < solvedCategoriesElements.length; i++){
+        console.log(solvedCategoriesElements[i].innerHTML);
+        solvedCategoriesTitles.push(solvedCategoriesElements[i].innerHTML);
     }
 
     //set the hint to one of the categories the user has not already sovled
     for(const possibleHint in gameCategories){
-        console.log(possibleHint);
         if(!solvedCategoriesTitles.includes(possibleHint)){
             hintText.innerHTML = possibleHint;
             break;
