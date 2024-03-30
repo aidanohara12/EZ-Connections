@@ -53,12 +53,12 @@ function getHint(){
 
     //get their titles
     for(let i = 0; i < solvedCategoriesElements.length; i++){
-        console.log(solvedCategoriesElements[i].innerHTML);
         solvedCategoriesTitles.push(solvedCategoriesElements[i].innerHTML);
     }
 
     //set the hint to one of the categories the user has not already sovled
     for(const possibleHint in gameCategories){
+        console.log(possibleHint);
         if(!solvedCategoriesTitles.includes(possibleHint)){
             hintText.innerHTML = possibleHint;
             break;
