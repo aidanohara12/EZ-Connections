@@ -25,4 +25,4 @@ Using all of these hints the user can now easily complete the Connections while 
 
 
 ## What we learned
-During this project we learned core concepts in JavaScript, HTML and CSS programming. We also learned key reverse engineering and problem solving stratagies that helped us overcome obsticles. 
+During this project we learned core concepts in JavaScript, HTML and CSS programming. We also learned key reverse engineering and problem solving stratagies that helped us overcome obsticles. In addition to this, we delved into what it takes to create a Google Chrome Extension, and how they are uploaded for use by the general public.
