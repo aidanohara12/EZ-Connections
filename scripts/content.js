@@ -132,6 +132,8 @@ totalHints.setAttribute("data-testid", "total-hints");
 totalHints.style.textAlign = 'center';
 totalHints.style.fontWeight = 'bold';
 
+totalHints.innerHTML = "Total Hints: " + count;
+
 congratsButton.insertAdjacentElement("beforeend", hintText);
 
 
