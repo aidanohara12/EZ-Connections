@@ -46,7 +46,7 @@ function getHint(){
     buttonRow.insertAdjacentElement("afterend", hintText);
 }
 
-hintButton.setAttribute('onclick', 'getHint()');
+hintButton.addEventListener("click", getHint);
 
 //insert the new button next to the existing button
 shuffleButton.parentNode.insertBefore(hintButton, shuffleButton.nextSibling);
