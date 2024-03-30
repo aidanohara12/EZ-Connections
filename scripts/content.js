@@ -118,7 +118,7 @@ function highlightWord(categoryTitle){
 
     //get the string for each word
     for(const tile of remainingWordsElements){
-        if(gameWords[solutionIndex].includes(tile.innerHTML)){
+        if(gameWords[solutionIndex].includes(tile.innerText)){
             tile.setAttribute("background-color", "rgb(219, 219, 210");
             break;
         }
