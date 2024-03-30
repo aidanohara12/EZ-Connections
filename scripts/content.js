@@ -58,6 +58,7 @@ function getHint(){
 
     //set the hint to one of the categories the user has not already sovled
     for(const possibleHint in gameCategories){
+        console.log(possibleHint);
         if(!solvedCategoriesTitles.includes(possibleHint)){
             hintText.innerHTML = possibleHint;
             break;
