@@ -120,7 +120,7 @@ function highlightWord(categoryTitle){
     for(const tile of remainingWordsElements){
         console.log(tile.innerText);
         if(gameWords[solutionIndex].includes(tile.innerText)){
-            if(tile.style.backgroundColor != "rgb(227, 82, 82)" && tile.style.backgroundColor != "rgb(90,89,78)") {
+            if(tile.style.backgroundColor != "rgb(227, 82, 82)" && tile.style.backgroundColor != "rgb(90, 89, 78)") {
 
                 tile.style.backgroundColor = "rgb(227, 82, 82)";
                 break;
