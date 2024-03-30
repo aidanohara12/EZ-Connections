@@ -1,4 +1,4 @@
-console.log("This is in the highligh word branch");
+console.log("This is in the highligh word branch again");
 
 //get the current date for accessing the connections data
 const date = new Date();
