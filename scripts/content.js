@@ -79,11 +79,15 @@ function getHint(){
         //instead change the old text
         const hintText = document.querySelector('[data-testid="hint-title"]');
 
+        //create bold hint text
+        let hint = "Hint: " + getNextHintText();
+        hint.bold();
+            
         //check if an additional hint was requested
-        if(hintText.innerHTML == getNextHintText()){
+        if(hintText.innerHTML == hint){
             highlightWord(hintText.innerHTML);
         }else{
-            hintText.innerHTML = "Hint: " + getNextHintText();
+            hintText.innerHTML = hint;
     
         }
     }
