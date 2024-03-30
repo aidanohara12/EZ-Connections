@@ -23,7 +23,7 @@ fetch(url).then((response) => response.json()).then((json) => {
 });
 
 //add the hint button to the webpage
-const shuffleButton = document.querySelecterAll('[data-testid=shuffle-btn]');
-for(let but in shuffleButton){
-    but.innerHTML = "YIPPEE";
-}
+const shuffleButton = document.querySelecter('[data-testid=shuffle-btn]');
+const hintButton = document.createElement('button');
+hintButton.innerHTML = 'Hint';
+shuffleButton.parentNode.insertBefore(hintButton, shuffleButton);
