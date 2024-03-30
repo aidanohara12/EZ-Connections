@@ -60,7 +60,7 @@ function getHint(){
 
         hintText.innerHTML = getNextHintText();
 
-        buttonRow.insertAdjacentElement("afterend", hintText);
+        buttonRow.insertAdjacentElement("beforeend", hintText);
         gotPrevHint = true;
     }else{
         const hintText = document.querySelector('[data-testid="hint-title"]');
