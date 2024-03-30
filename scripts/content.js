@@ -51,16 +51,15 @@ let gotPrevHint = false;
 //get the hint to be displayed to the user
 function getHint(){
         if(!gotPrevHint){
-        //adding the text below the button 
-        const buttonRow = document.querySelector('[class="Board-module_boardActionGroup__mUDT8"]');
+        //adding the text below the mistakes
+        const mistakeRow = document.querySelector('[class="Mistakes-module_mistakesWrapper__LGl68 Mistakes-module_showMistakes__q6EWj"]');
         const hintText = document.createElement('h2');
         hintText.setAttribute("data-testid", "hint-title");
         hintText.setAttribute("class", "Mistakes-module_mistakesContent__nlijY");
-        hintText.setAttribute("color", "red");
 
         hintText.innerHTML = getNextHintText();
 
-        buttonRow.insertAdjacentElement("beforeend", hintText);
+        mistakeRow.insertAdjacentElement("beforeend", hintText);
         gotPrevHint = true;
     }else{
         const hintText = document.querySelector('[data-testid="hint-title"]');
