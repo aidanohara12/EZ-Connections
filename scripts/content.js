@@ -23,11 +23,11 @@ fetch(url).then((response) => response.json()).then((json) => {
 });
 
 //add the hint button to the webpage
-const buttonRow = document.getElementByClass("Board-module_boardActionGroup__mUDT8")
+const buttonRow = document.getElementByClass("ActionButton-module_button__IlhXt ")
 const hintButton = document.createElement("button");
 hintButton.classList.add("ActionButton-module_button__IlhXt ");
-hintButton.style.background-color = "rgb(255, 255, 255)";
+hintButton.setAttribute("background-color", "rgb(255, 255, 255)");
 hintButton.style.color = "rgb(127, 127, 127)";
-hintButton.style.border-color = "rgb(127, 127, 127)";
+hintButton.setAttribute("border-color", "rgb(127, 127, 127)");
 hintButton.innerHTML = "Hint";
-rowButton.insertAdjacentElement("beforeend", hintButton);
+buttonRow.insertAdjacentElement("afterEnd", hintButton);
