@@ -127,14 +127,17 @@ function highlightWord(categoryTitle){
 
 //select the final button
 const congratsButton = document.querySelector('[class="xwd__modal--content"]');
+//create the text and set attributes
 const totalHints = document.createElement('h2');
 totalHints.setAttribute("data-testid", "total-hints");
 totalHints.style.textAlign = 'center';
 totalHints.style.fontWeight = 'bold';
 
+//change text to show count
 totalHints.innerHTML = "Total Hints: " + count;
 
-congratsButton.insertAdjacentElement("beforeend", hintText);
+//insert after the query selector
+congratsButton.insertAdjacentElement("beforeend", totalHints);
 
 
 
