@@ -53,7 +53,7 @@ function getHint(){
         if(!gotPrevHint){
         //adding the text below the button 
         const buttonRow = document.querySelector('[class="Board-module_boardActionGroup__mUDT8"]');
-        const hintText = document.createElement('p');
+        const hintText = document.createElement('h2');
         hintText.setAttribute("data-testid", "hint-title");
         hintText.setAttribute("class", "Mistakes-module_mistakesContent__nlijY");
 
