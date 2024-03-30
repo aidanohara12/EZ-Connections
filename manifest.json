@@ -14,7 +14,7 @@
   },
   "content_scripts": [
     {
-      "js": ["scripts/content.js"],
+      "js": ["scripts/content.mjs"],
       "matches": [
         "https://www.nytimes.com/games/connections/*"
       ]
