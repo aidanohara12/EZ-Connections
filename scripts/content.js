@@ -58,7 +58,6 @@ let count = 0;
 
 //get the hint to be displayed to the user
 function getHint(){
-    count++;
     if(!gotPrevHint){
         //adding the text below the mistakes
         const gameBoard = document.getElementById("pz-game-root");
@@ -74,6 +73,7 @@ function getHint(){
         totalHints.style.textAlign = 'center';
         totalHints.style.fontWeight = 'bold';
 
+        count++;
         totalHints.innerHTML = "Total Hints: " + count;
         hintText.innerHTML = getNextHintText();
 
@@ -81,10 +81,6 @@ function getHint(){
         gameBoard.insertAdjacentElement("beforeend", totalHints);
         gotPrevHint = true;
     }else{
-        //update hint count
-        const totalHints = document.querySelector('[data-testid="total-hints"]');
-        totalHints.innerHTML = "Total Hints: " + count;
-
         //DONT ADD NEW TEXT
         //instead change the old text
         const hintText = document.querySelector('[data-testid="hint-title"]');
@@ -93,8 +89,13 @@ function getHint(){
         if(hintText.innerHTML == getNextHintText()){
             highlightWord(hintText.innerHTML);
         }else{
+            count++;
             hintText.innerHTML = getNextHintText();
         }
+
+        //update hint count
+        const totalHints = document.querySelector('[data-testid="total-hints"]');
+        totalHints.innerHTML = "Total Hints: " + count;
     }
 }
 
@@ -130,6 +131,7 @@ function highlightWord(categoryTitle){
         if(gameWords[solutionIndex].includes(tile.innerText)){
             if(tile.style.backgroundColor != "rgb(227, 82, 82)" && tile.style.backgroundColor != "rgb(90, 89, 78)") {
                 tile.style.backgroundColor = "rgb(227, 82, 82)";
+                count++;
                 break;
             }
         }
