@@ -24,6 +24,7 @@ Now they have a hint shown below the button giving them the category that they h
 
 If the user is still having trouble they can click the hint button again and it will highlight a tile that is contained in the category they have a hint for. 
 
-![alt text](RedHintDemo.png)
+![Red Hint Demo](RedHintDemo.png)
+
 
 Using all of these hints the user can now easily complete the Connections while having fun hints along the way!
