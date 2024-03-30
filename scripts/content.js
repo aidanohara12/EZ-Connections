@@ -21,3 +21,6 @@ fetch(url).then((response) => response.json()).then((json) => {
         game_categories.push(category.title);
     }
 });
+
+const badge = document.createElement("p");
+badge.textContent = "Hello World";
