@@ -56,7 +56,7 @@ function getHint(){
         const hintText = document.createElement('h2');
         hintText.setAttribute("data-testid", "hint-title");
         hintText.setAttribute("class", "Mistakes-module_mistakesContent__nlijY");
-        hintText.setAttribute("text-align", "center");
+        hintText.setAttribute("color", "red");
 
         hintText.innerHTML = getNextHintText();
 
