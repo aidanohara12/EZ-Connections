@@ -5,7 +5,7 @@
   "version": "1.0",
   "action": {
     "default_popup": "hello.html"
-  }
+  },
   "icons": {
     "16": "images/ezConnections16.png",
     "32": "images/ezConnections32.png",
