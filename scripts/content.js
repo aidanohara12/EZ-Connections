@@ -23,7 +23,7 @@ fetch(url).then((response) => response.json()).then((json) => {
 });
 
 //add the hint button to the webpage
-const buttonRow = document.getElementsByClassName("ActionButton-module_button__IlhXt ")
+const buttonRow = document.getElementsByClassName("ActionButton-module_button__IlhXt ");
 const hintButton = document.createElement("button");
 hintButton.classList.add("ActionButton-module_button__IlhXt ");
 hintButton.setAttribute("background-color", "rgb(255, 255, 255)");
