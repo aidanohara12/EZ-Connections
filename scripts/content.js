@@ -50,12 +50,16 @@ shuffleButton.parentNode.insertBefore(hintButton, shuffleButton.nextSibling);
 //keep track of if the user already got a hint previously
 let gotPrevHint = false;
 
+//create count to always keep track of how mnay hints used
+let count = 0;
+
 
 
 
 
 //get the hint to be displayed to the user
 function getHint(){
+        count++;
         if(!gotPrevHint){
         //adding the text below the mistakes
         const gameBoard = document.getElementById("pz-game-root");
@@ -120,3 +124,17 @@ function highlightWord(categoryTitle){
         }
     }
 }
+
+//select the final button
+const congratsButton = document.querySelector('[class="xwd__modal--content"]');
+const totalHints = document.createElement('h2');
+totalHints.setAttribute("data-testid", "total-hints");
+totalHints.style.textAlign = 'center';
+totalHints.style.fontWeight = 'bold';
+
+congratsButton.insertAdjacentElement("beforeend", hintText);
+
+
+
+
+
