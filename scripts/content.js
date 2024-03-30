@@ -125,9 +125,17 @@ function highlightWord(categoryTitle){
     }
 }
 
+
+const viewResultsButton = document.querySelector('[class="ActionButton-module_button__IlhXt ActionButton-module_xLarge__zj7ZN"]');
+console.log(viewResultsButton);
+
+
+
+
+
 //select the final button
 const congratsButton = document.querySelector('[class="xwd__modal--content"]');
-console.log(count);
+
 
 //create the text and set attributes
 const totalHints = document.createElement('h2');
