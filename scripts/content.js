@@ -68,6 +68,7 @@ function getHint(){
         hintText.setAttribute("data-testid", "hint-title");
         //hintText.setAttribute("class", "Mistakes-module_mistakesContent__nlijY");
         hintText.style.textAlign = 'center';
+        hintText.style.fontWeight = 'bold';
 
         hintText.innerHTML = getNextHintText();
 
