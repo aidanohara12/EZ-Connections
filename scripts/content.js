@@ -1,3 +1,5 @@
+console.log("This is in the highligh word branch again");
+
 //get the current date for accessing the connections data
 const date = new Date();
 
@@ -12,16 +14,25 @@ let urlDate = yyyy + '-' + mm + '-' + dd;
 //get the json for the current day
 let url = "https://www.nytimes.com/svc/connections/v2/" + urlDate + ".json";
 
-//array to store the category titles
+//array to store the correct answers
 let gameCategories = [];
+let gameWords = [];
 
 //import the json
 fetch(url).then((response) => response.json()).then((json) => {
     for(const category of json.categories){
         gameCategories.push(category.title);
+
+        //getting the correct answers for each category
+        let setOfFour = [];
+        for(const word of category.cards){
+            setOfFour.push(word.content);
+        }
+        gameWords.push(setOfFour);
     }
 
     console.log(gameCategories);
+    console.log(gameWords);
 });
 
 //add the hint button to the webpage
@@ -63,8 +74,16 @@ function getHint(){
         gameBoard.insertAdjacentElement("beforeend", hintText);
         gotPrevHint = true;
     }else{
+        //DONT ADD NEW TEXT
+        //instead change the old text
         const hintText = document.querySelector('[data-testid="hint-title"]');
-        hintText.innerHTML = getNextHintText();
+
+        //check if an additional hint was requested
+        if(hintText.innerHTML == getNextHintText()){
+            highlightWord(hintText.innerHTML);
+        }else{
+            hintText.innerHTML = getNextHintText();
+        }
     }
 }
 
@@ -80,10 +99,31 @@ function getNextHintText() {
 
     //set the hint to one of the categories the user has not already sovled
     for(let i = 0; i < gameCategories.length; i++){
-        console.log(gameCategories[i]);
         if(!solvedCategoriesTitles.includes(gameCategories[i])){
             return gameCategories[i];
             break;
+        }
+    }
+}
+
+//passes in the category title and highlights a tile for one of the words
+function highlightWord(categoryTitle){
+    //get every card remaining on the board
+    const remainingWordsElements = document.querySelectorAll('[data-testid="card-label"]');
+
+    console.log(remainingWordsElements);
+
+    //get the index for the solutions
+    let solutionIndex = gameCategories.indexOf(categoryTitle);
+
+    //get the string for each word
+    for(const tile of remainingWordsElements){
+        console.log(tile.innerText);
+        if(gameWords[solutionIndex].includes(tile.innerText)){
+            if(tile.style.backgroundColor != "rgb(227, 82, 82)"){
+                tile.style.backgroundColor = "rgb(227, 82, 82)";
+                break;
+            }
         }
     }
 }
