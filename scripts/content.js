@@ -68,7 +68,6 @@ function getHint(){
         hintText.setAttribute("data-testid", "hint-title");
         //hintText.setAttribute("class", "Mistakes-module_mistakesContent__nlijY");
         hintText.style.textAlign = 'center';
-        hintText.style.fontWeight = 'bold';
         
         //create bold hint text    
         let hint = "Hint: " + getNextHintText();
