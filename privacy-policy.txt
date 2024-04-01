@@ -1,0 +1,41 @@
+Privacy Policy
+
+EZConnections is committed to protecting the privacy of its users. This Privacy Policy outlines how we collect, use, and share user data in connection with our extension.
+
+1. Information Collection
+
+We may collect the following types of information from users:
+
+UserActivity: We collect the data of the user's clicks on the website to make sure we know when they are trying to use our button.
+Websitecontent: We collect the text and images of the website so that we can add our button.
+
+2. Use of Information
+
+We may use the collected information for the following purposes:
+
+Providing and improving our product
+Personalizing our user experiences
+
+3. Sharing of Information
+
+We do not share the informaton we collect with anyone but ourselves.
+
+4. Security Measures
+
+There are no need for security measures because we do not collect any user personal information
+
+5. User Rights
+
+Users have the following rights regarding their personal information:
+
+Right to Rectification: Users can request corrections to inaccurate or incomplete personal data.
+Right to Erasure: Users can request deletion of their personal data, subject to legal limitations.
+Right to Opt-Out: Users can opt-out of receiving marketing communications from us.
+
+6. Updates to the Privacy Policy
+
+We may update this Privacy Policy from time to time to reflect changes in our data handling practices or legal requirements. We will notify users of any material changes to the Privacy Policy via GitHub.
+
+7. Contact Information
+
+If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at ato22@pitt.edu
